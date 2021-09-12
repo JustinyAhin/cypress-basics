@@ -1,0 +1,40 @@
+--- Adding a new task ---
+Given that the Todo-MVC app is running
+When I add a new task
+Then the new task should appear in the task list
+And the task number should be 1
+
+--- Showing a new task as active ---
+Given that the Todo-MVC app is running
+When I add a new task
+And I click the active tasks link
+Then the new task should appear in the active tasks list
+
+--- Deleting a task ---
+Given that the Todo-MVC app is running
+When I add a new task
+And I click the delete button for that task
+Then the task should be removed from the task list
+And the to-do list <ul> tag should be removed
+
+--- Marking a task as complete ---
+Given that the Todo-MVC app is running
+When I add a new task
+And I click the complete toggle button for that task
+Then the task label should be crossed out
+And the complete tasks list should contain the task
+
+--- Marking all tasks as complete ---
+Given that the Todo-MVC app is running
+When I add two new tasks
+And I click the toggle all button
+Then the task labels should be crossed out
+And the complete tasks list should contain both tasks
+
+--- Removing completed tasks ---
+Given that the Todo-MVC app is running
+When I add two new tasks
+And I click the toggle all button
+And I click the "Clear completed" button
+Then the completed tasks should be removed from the task list
+And the to-do list <ul> tag should be removed
